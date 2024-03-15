@@ -1,0 +1,105 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;1,100&family=Julius+Sans+One&family=Noto+Sans:wght@100;300;500&display=swap" rel="stylesheet');
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Background with blur */
+.background {
+    position: fixed;
+    top: -10px; /* Extend beyond the viewport slightly */
+    left: -10px; /* Extend beyond the viewport slightly */
+    width: calc(100% + 20px); /* Add extra width to cover the extended area */
+    height: calc(100% + 20px); /* Add extra height to cover the extended area */
+    background: url('image.jpg') no-repeat center center/cover;
+    filter: blur(4px);
+    z-index: -2;
+    background-position: top center;
+}
+
+/* Navbar styles */
+.navbar {
+    width: 100%;
+    background-color: white; /* Make sure it has a background color */
+    text-align: center;
+    font-size: 32px;
+    padding: 1rem 0;
+    position: fixed;
+    font-family: "Julius Sans One", sans-serif;
+    top: 0;
+    z-index: 999; /* Ensure it's on top but below the content */
+}
+
+/* Content styles */
+/* ... other styles ... */
+
+/* Content styles */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Above the background image */
+    color: #fff; /* Assuming white text color for contrast */
+    text-align: center;
+    width: 100%;
+}
+
+.content h2 {
+    font-size: 4em; /* Adjust as needed for size */
+    margin: 0 0 0.5em; /* Add bottom margin to separate from paragraph */
+    line-height: 1.2; /* Adjust line height for better readability */
+    font-weight: 100; /* Make it bold */
+    font-family: "Julius Sans One", sans-serif;
+
+}
+
+.content p {
+    /* Remove absolute positioning if previously set */
+    margin-top: 6%; /* Add top margin to push it down from the headline */
+    font-size: 1.2em; /* Adjust as needed for size */
+    line-height: 1.6; /* Adjust line height for better readability */
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 100;
+    margin-left: 24px;
+    margin-right: 24px;
+    
+}
+
+/* ... other styles ... */
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        font-size: 24px;
+    }
+
+    .content h2 {
+        font-size: 2em;
+    }
+
+    .content p {
+        font-size: 0.8em;
+    }
+}
+
+.background::after {
+    content: '';
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
